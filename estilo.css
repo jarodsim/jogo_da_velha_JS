@@ -1,5 +1,18 @@
-body{
+/*
+ * @author Jarod Mateus
+ * @version 0.1
+ * @copyright jarodCavalcante 2019
+ * @description css jogo da velha
+ */
+body {
     font: normal 15pt Arial;
+    background-color: #2f3640;
+    color: white;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
 }
 
 #mostrador {
@@ -34,3 +47,24 @@ body{
     height: 252px;
     margin-top: 30px;
 }
+
+button {
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    border-radius: 3px;
+    width: 252px;
+    height: 30px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+button:hover {
+    background-color: tomato;
+}
+
+@media screen and (max-width: 600px) {
+    button{
+        width: 100%;
+    }
+  }

@@ -90,3 +90,8 @@ async function verificarVencedor() {
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+// função para resetar o jogo
+function resetar() {
+    window.location.reload();
+}
