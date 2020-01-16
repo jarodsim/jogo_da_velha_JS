@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- css -->
+        <link rel="stylesheet" href="estilo.css">
+        <!-- script -->
+
+        <title>Jogo da velha</title>
+    </head>
+
+    <body>
+        <div id="mostrador">
+            <p>Vez do jogador:</p>
+            <img id="img_vez_do_jogador" src="">
+        </div>
+        <!--
+            Cada quadrado será uma Div
+            Cada linha será uma letra e cada coluna um número
+            O atributo "jogada" receberá os valores: vazio, X ou O
+        -->
+        <div class="tabuleiro">
+            <div id="a1" class="espaco" jogada=""></div>
+            <div id="a2" class="espaco" jogada=""></div>
+            <div id="a3" class="espaco" jogada=""></div>
+
+            <div id="b1" class="espaco" jogada=""></div>
+            <div id="b2" class="espaco" jogada=""></div>
+            <div id="b3" class="espaco" jogada=""></div>
+
+            <div id="c1" class="espaco" jogada=""></div>
+            <div id="c2" class="espaco" jogada=""></div>
+            <div id="c3" class="espaco" jogada=""></div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+
+</html>
