@@ -59,6 +59,10 @@ button {
     text-align: center;
 }
 
+footer{
+    font: normal 10pt Arial;
+    text-align: center;
+}
 button:hover {
     background-color: tomato;
 }
