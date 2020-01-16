@@ -75,6 +75,8 @@ async function verificarVencedor() {
     } else if (a1 != "" && a2 != "" && a3 != "" && b1 != "" && b2 != "" && b3 != "" && c1 != "" && c2 != "" && c3 != "") {
         await sleep(50);
         alert('Deu velha')
+        await sleep(2000);
+        resetar();
     }
 
     if (vencedor != "") {
@@ -83,6 +85,8 @@ async function verificarVencedor() {
         //função para esperar antes do alert
         await sleep(50);
         alert(`O ganhador foi o: ${vencedor}`);
+        await sleep(2000);
+        resetar();
     }
 }
 
