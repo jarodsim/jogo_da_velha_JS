@@ -1,3 +1,10 @@
+/**
+ * Jarod Mateus - 2020
+ * jarodsim@gmail.com
+ * jarodmateus.herokuapp.com
+    @description script do jogo da velha
+ */
+
 const player1 = 'X';
 const player2 = 'O';
 var vezJogador = player1;
@@ -70,12 +77,12 @@ async function verificarVencedor() {
         vencedor = a1;
     } else if ((b2 == b1 && b2 == b3 && b2 != "") || (b2 == a2 && b2 == c2 && b2 != "") || (b2 == a3 && b2 == c1 && b2 != "")) {
         vencedor = b2;
-    } else if ((c3 == c2 && c3 == c1 && c3 == "") || (c3 == a3 && c3 == b2) || (c1 == c2 && c1 == c3) && c3 != "") {
+    } else if ((c3 == c2 && c3 == c1 && c3 == "") || (c3 == a3 && c3 == b3) || (c1 == c2 && c1 == c3) && c3 != "") {
         vencedor = c3;
     } else if (a1 != "" && a2 != "" && a3 != "" && b1 != "" && b2 != "" && b3 != "" && c1 != "" && c2 != "" && c3 != "") {
         await sleep(50);
         alert('Deu velha')
-        await sleep(2000);
+        await sleep(1500);
         resetar();
     }
 
@@ -85,7 +92,7 @@ async function verificarVencedor() {
         //função para esperar antes do alert
         await sleep(50);
         alert(`O ganhador foi o: ${vencedor}`);
-        await sleep(2000);
+        await sleep(1500);
         resetar();
     }
 }

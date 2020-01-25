@@ -1,13 +1,48 @@
 /*
  * @author Jarod Mateus
  * @version 0.1
- * @copyright jarodCavalcante 2019
+ * @copyright Jarod Cavalcante 2019
  * @description css jogo da velha
  */
 body {
     font: normal 15pt Arial;
     background-color: #2f3640;
+    background-image: linear-gradient(to right, #933F95, rgb(97, 12, 94));
     color: white;
+}
+
+button {
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    border-radius: 3px;
+    margin-top: 50px;
+    width: 200px;
+    height: 30px;
+}
+
+button:hover {
+    background-color: tomato;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-style: bold;
+}
+
+a:hover{
+    color: tomato;
+}
+
+footer {
+    font: normal 10pt Arial;
+    text-align: center;
+}
+
+#butao {
+    margin: auto;
+    text-align: center;
 }
 
 .container {
@@ -48,27 +83,10 @@ body {
     margin-top: 30px;
 }
 
-button {
-    border: 1px solid white;
-    background-color: transparent;
-    color: white;
-    border-radius: 3px;
-    width: 252px;
-    height: 30px;
-    margin-top: 20px;
-    text-align: center;
-}
 
-footer{
-    font: normal 10pt Arial;
-    text-align: center;
-}
-button:hover {
-    background-color: tomato;
-}
 
 @media screen and (max-width: 600px) {
-    button{
+    button {
         width: 100%;
     }
-  }
+}

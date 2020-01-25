@@ -5,6 +5,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="Site de jogo da velha em JS">
+        <meta name="author" content="Jarod Mateus">
+        <!--
+            * Jarod Mateus - 2020
+            * jarodsim@gmail.com
+            * jarodmateus.herokuapp.com
+        -->
         <!-- css -->
         <link rel="stylesheet" href="estilo.css">
         <!-- script -->
@@ -36,16 +43,19 @@
                 <div id="c2" class="espaco" jogada=""></div>
                 <div id="c3" class="espaco" jogada=""></div>
             </div>
-
-            <button onclick="resetar()">Resetar</button>
+            <div id="butao">
+                <button onclick="resetar()">Resetar</button>
+            </div>
+            <footer>
+                <p>Desenvolvido por Jarod Cavalcante - 2020</p>
+                <p><a href="https://jarodmateus.herokuapp.com" target="_blanck"> Visite meu portifólio</a></p>
+                <p>Créditos - canal "Programador Br"</p>
+            </footer>
         </div>
 
         <script src="script.js"></script>
 
-        <footer>
-            <p>Desenvolvido por Jarod Cavalcante - 2020</p>
-            <p>Créditos - canal "Programador Br"</p>
-        </footer>
+
     </body>
 
 </html>
