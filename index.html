@@ -25,6 +25,11 @@
                 <p>Vez do jogador:</p>
                 <img id="img_vez_do_jogador" src="">
             </div>
+
+            <div id="tempo">
+                <p id="exibe_tempo">Tempo: 0s</p>
+                <small>Caso acabe o tempo, o outro jogador ganha</small>
+            </div>
             <!--
                 Cada quadrado será uma Div
                 Cada linha será uma letra e cada coluna um número
@@ -51,11 +56,25 @@
                 <p><a href="https://jarodmateus.herokuapp.com" target="_blanck"> Visite meu portifólio</a></p>
                 <p>Créditos - canal "Programador Br"</p>
             </footer>
+
+            <!--Comentarios-->
+            <div id="like">
+                <div class="fb-like" data-href="https://jogo-da-velhakkk.netlify.com/" data-width=""
+                    data-layout="button" data-action="like" data-size="small" data-share="true"></div>
+            </div>
+            <div id="comentarios">
+                <div class="fb-comments" data-href="https://jogo-da-velhakkk.netlify.com/" data-width="100%"
+                    data-numposts="5" data-colorscheme="dark"></div>
+            </div>
+
         </div>
 
         <script src="script.js"></script>
 
 
     </body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v5.0">
+    </script>
 
 </html>

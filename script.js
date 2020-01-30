@@ -9,11 +9,45 @@ const player1 = 'X';
 const player2 = 'O';
 var vezJogador = player1;
 var gameOver = false;
-
-
+var acabou = false;
+var vencedor = '';
+var exibe = document.getElementById('exibe_tempo');
+var timer;
 atualizaMostrador();
 inicializarEspacos();
 
+/**
+ * Funcao para contar o tempo de 30 segundos para cada jogador
+ */
+
+/*function tempo() {
+    var i = 0;
+    setInterval(function () {
+        exibe.innerText = "Tempo: " + i + "s";
+        i++
+        if (i == 30) {
+            clearInterval();
+            i = 0;
+            acabou = true;
+            gameOver = true;
+            vencedor = vezJogador;
+        }
+    }, 1000);
+}*/
+
+function tempo() {
+    var counter = 30;
+    timer = setInterval(function () {
+        if (counter <= 1) {
+            clearInterval(timer);
+        }
+        exibe.innerText = counter--;
+    }, 1000);
+}
+
+/**
+ * Funcao para exibir a imagem do X ou O no socal selecionado pelo jogador
+ */
 function atualizaMostrador() {
     if (gameOver == true) {
         return;
@@ -28,7 +62,10 @@ function atualizaMostrador() {
     }
 }
 
-
+/**
+ * Funcao que inicializa os espaços em que o jogador selecionará para jogar
+ * setando tambem a ve do jogador
+ */
 function inicializarEspacos() {
     var espacos = document.getElementsByClassName('espaco');
     for (var i = 0; i < espacos.length; i++) {
@@ -43,10 +80,31 @@ function inicializarEspacos() {
                     this.innerHTML = '<img src="imagens/x.png">';
                     this.setAttribute('jogada', player1);
                     vezJogador = player2;
+                    //tempo
+                    setTimeout(function () {
+                        acabou = true;
+                        gameOver = true;
+                        vencedor = player1;
+                        console.log(vencedor);
+                        verificarVencedor();
+                    }, 30000);
+                    clearInterval(timer);
+                    tempo();
+
                 } else {
                     this.innerHTML = '<img src="imagens/o.png">';
                     this.setAttribute('jogada', player2);
                     vezJogador = player1;
+                    //tempo
+                    setTimeout(function () {
+                        acabou = true;
+                        gameOver = true;
+                        vencedor = player2;
+                        console.log(vencedor);
+                        verificarVencedor();
+                    }, 30000);
+                    clearInterval(timer);
+                    tempo();
                 }
             }
             //para depois exibir o próximo jogador
@@ -57,7 +115,9 @@ function inicializarEspacos() {
     }
 }
 
-
+/**
+ * Funcao que verifica rodando todos os campos e verificando se sao iguais para dizer quem ganhou
+ */
 async function verificarVencedor() {
     var a1 = document.getElementById('a1').getAttribute('jogada');
     var a2 = document.getElementById('a2').getAttribute('jogada');
@@ -71,20 +131,21 @@ async function verificarVencedor() {
     var c2 = document.getElementById('c2').getAttribute('jogada');
     var c3 = document.getElementById('c3').getAttribute('jogada');
 
-    var vencedor = "";
-
-    if ((a1 == b1 && a1 == c1 && a1 != "") || (a1 == a2 && a1 == a3 && a1 != "") || (a1 == b2 && a1 == c3 && a1 != "")) {
-        vencedor = a1;
-    } else if ((b2 == b1 && b2 == b3 && b2 != "") || (b2 == a2 && b2 == c2 && b2 != "") || (b2 == a3 && b2 == c1 && b2 != "")) {
-        vencedor = b2;
-    } else if ((c3 == c2 && c3 == c1 && c3 == "") || (c3 == a3 && c3 == b3) || (c1 == c2 && c1 == c3) && c3 != "") {
-        vencedor = c3;
-    } else if (a1 != "" && a2 != "" && a3 != "" && b1 != "" && b2 != "" && b3 != "" && c1 != "" && c2 != "" && c3 != "") {
-        await sleep(50);
-        alert('Deu velha')
-        await sleep(1500);
-        resetar();
+    if (vencedor == '') {
+        if ((a1 == b1 && a1 == c1 && a1 != "") || (a1 == a2 && a1 == a3 && a1 != "") || (a1 == b2 && a1 == c3 && a1 != "")) {
+            vencedor = a1;
+        } else if ((b2 == b1 && b2 == b3 && b2 != "") || (b2 == a2 && b2 == c2 && b2 != "") || (b2 == a3 && b2 == c1 && b2 != "")) {
+            vencedor = b2;
+        } else if ((c3 == c2 && c3 == c1 && c3 == "") || (c3 == a3 && c3 == b3) || (c1 == c2 && c1 == c3) && c3 != "") {
+            vencedor = c3;
+        } else if (a1 != "" && a2 != "" && a3 != "" && b1 != "" && b2 != "" && b3 != "" && c1 != "" && c2 != "" && c3 != "") {
+            await sleep(50);
+            alert('Deu velha')
+            await sleep(1500);
+            resetar();
+        }
     }
+
 
     if (vencedor != "") {
         gameOver == true;
@@ -97,12 +158,16 @@ async function verificarVencedor() {
     }
 }
 
-//uma promisse
+/**
+ * Uma promisse
+ */
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// função para resetar o jogo
+/**
+ * Funcao para resetar o jogo
+ */
 function resetar() {
     window.location.reload();
 }

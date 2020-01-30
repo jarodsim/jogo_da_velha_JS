@@ -7,7 +7,7 @@
 body {
     font: normal 15pt Arial;
     background-color: #2f3640;
-    background-image: linear-gradient(to right, #933F95, rgb(97, 12, 94));
+    background-image: linear-gradient(to right, #933F95, #7C287C);
     color: white;
 }
 
@@ -25,13 +25,13 @@ button:hover {
     background-color: tomato;
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
     font-style: bold;
 }
 
-a:hover{
+a:hover {
     color: tomato;
 }
 
@@ -43,11 +43,6 @@ footer {
 #butao {
     margin: auto;
     text-align: center;
-}
-
-.container {
-    width: 100%;
-    margin: auto;
 }
 
 #mostrador {
@@ -67,6 +62,11 @@ footer {
     height: 50px;
 }
 
+.container {
+    width: 100%;
+    margin: auto;
+}
+
 .espaco {
     width: 80px;
     height: 60px;
@@ -83,10 +83,43 @@ footer {
     margin-top: 30px;
 }
 
+#tempo {
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+
+#tempo p {
+    font-size: 15px;
+    background-color: #7C287C;
+}
+
+#tempo small{
+    font-size: 10px;
+}
+
+#comentarios {
+    width: 50%;
+    margin: auto;
+}
+
+#like {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
 
 
+/*
+*Para dispositivos com tela de largura inferior a 600px
+*/
 @media screen and (max-width: 600px) {
     button {
+        width: 100%;
+    }
+
+    #comentarios {
+        margin-top: 25px;
         width: 100%;
     }
 }
