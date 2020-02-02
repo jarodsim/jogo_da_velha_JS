@@ -7,43 +7,29 @@
 
 const player1 = 'X';
 const player2 = 'O';
+var nome1 = '';
+var nome2 = '';
 var vezJogador = player1;
 var gameOver = false;
 var acabou = false;
 var vencedor = '';
 var exibe = document.getElementById('exibe_tempo');
 var timer;
+
 atualizaMostrador();
 inicializarEspacos();
 
-/**
- * Funcao para contar o tempo de 30 segundos para cada jogador
- */
-
-/*function tempo() {
-    var i = 0;
-    setInterval(function () {
-        exibe.innerText = "Tempo: " + i + "s";
-        i++
-        if (i == 30) {
-            clearInterval();
-            i = 0;
-            acabou = true;
-            gameOver = true;
-            vencedor = vezJogador;
-        }
-    }, 1000);
-}*/
-
+/*
 function tempo() {
-    var counter = 30;
+    var counter = 5;
     timer = setInterval(function () {
+        exibe.innerText = counter--;
         if (counter <= 1) {
             clearInterval(timer);
         }
-        exibe.innerText = counter--;
     }, 1000);
 }
+*/
 
 /**
  * Funcao para exibir a imagem do X ou O no socal selecionado pelo jogador
@@ -80,31 +66,35 @@ function inicializarEspacos() {
                     this.innerHTML = '<img src="imagens/x.png">';
                     this.setAttribute('jogada', player1);
                     vezJogador = player2;
+                    /*
                     //tempo
+                    clearInterval(timer);
+                    tempo();
                     setTimeout(function () {
                         acabou = true;
                         gameOver = true;
                         vencedor = player1;
                         console.log(vencedor);
                         verificarVencedor();
-                    }, 30000);
-                    clearInterval(timer);
-                    tempo();
+                    }, 5000);
+                    */
 
                 } else {
                     this.innerHTML = '<img src="imagens/o.png">';
                     this.setAttribute('jogada', player2);
                     vezJogador = player1;
+                    /*
                     //tempo
+                    clearInterval(timer);
+                    tempo();
                     setTimeout(function () {
                         acabou = true;
                         gameOver = true;
                         vencedor = player2;
                         console.log(vencedor);
                         verificarVencedor();
-                    }, 30000);
-                    clearInterval(timer);
-                    tempo();
+                    }, 5000);
+                    */
                 }
             }
             //para depois exibir o próximo jogador
@@ -149,7 +139,6 @@ async function verificarVencedor() {
 
     if (vencedor != "") {
         gameOver == true;
-
         //função para esperar antes do alert
         await sleep(50);
         alert(`O ganhador foi o: ${vencedor}`);

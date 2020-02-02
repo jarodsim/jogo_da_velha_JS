@@ -83,21 +83,24 @@ footer {
     margin-top: 30px;
 }
 
+/*
 #tempo {
     width: 50%;
+    height: 100px;
     text-align: center;
     margin: auto;
+    background-color: #7C287C;
+    padding: 5px;
 }
 
 #tempo p {
     font-size: 15px;
-    background-color: #7C287C;
 }
 
 #tempo small{
     font-size: 10px;
 }
-
+*/
 #comentarios {
     width: 50%;
     margin: auto;
