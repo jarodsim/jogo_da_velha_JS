@@ -19,18 +19,6 @@ var timer;
 atualizaMostrador();
 inicializarEspacos();
 
-/*
-function tempo() {
-    var counter = 5;
-    timer = setInterval(function () {
-        exibe.innerText = counter--;
-        if (counter <= 1) {
-            clearInterval(timer);
-        }
-    }, 1000);
-}
-*/
-
 /**
  * Funcao para exibir a imagem do X ou O no socal selecionado pelo jogador
  */
@@ -53,8 +41,8 @@ function atualizaMostrador() {
  * setando tambem a ve do jogador
  */
 function inicializarEspacos() {
-    var espacos = document.getElementsByClassName('espaco');
-    for (var i = 0; i < espacos.length; i++) {
+    let espacos = document.getElementsByClassName('espaco');
+    for (let i = 0; i < espacos.length; i++) {
         // o que será executado quando houver o click, dentro de cadas espaço
         espacos[i].addEventListener('click', function () {
             if (gameOver == true) {
@@ -66,35 +54,10 @@ function inicializarEspacos() {
                     this.innerHTML = '<img src="imagens/x.png">';
                     this.setAttribute('jogada', player1);
                     vezJogador = player2;
-                    /*
-                    //tempo
-                    clearInterval(timer);
-                    tempo();
-                    setTimeout(function () {
-                        acabou = true;
-                        gameOver = true;
-                        vencedor = player1;
-                        console.log(vencedor);
-                        verificarVencedor();
-                    }, 5000);
-                    */
-
                 } else {
                     this.innerHTML = '<img src="imagens/o.png">';
                     this.setAttribute('jogada', player2);
                     vezJogador = player1;
-                    /*
-                    //tempo
-                    clearInterval(timer);
-                    tempo();
-                    setTimeout(function () {
-                        acabou = true;
-                        gameOver = true;
-                        vencedor = player2;
-                        console.log(vencedor);
-                        verificarVencedor();
-                    }, 5000);
-                    */
                 }
             }
             //para depois exibir o próximo jogador
